@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comic Shop</title>
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Connected CSS files -->
+    <link rel="stylesheet" href="./css/main-page.css" />
+    <link rel="stylesheet" href="./css/order-page.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <button class="burger-menu">
+          <img
+            class="burger-menu__icon"
+            src="./images/burger-menu.png"
+            alt="burger menu icon"
+          />
+        </button>
+        <a class="logo" href="./index.html"
+          ><img src="./images/logo.png" alt="open book logo"
+        /></a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#">আমাদের সম্পর্কে</a></li>
+            <li class="nav__item"><a href="#">দোকান</a></li>
+            <li class="nav__item"><a href="#">পর্যালোচনা</a></li>
+            <li class="nav__item"><a href="#">যোগাযোগ</a></li>
+          </ul>
+        </nav>
+        <a class="cart" href="#">
+          <img class="cart__img" src="./images/cart-simple.png" alt="cart" />
+          <span class="cart__counter counter">0</span>
+        </a>
+      </div>
+    </header>
+    <main class="main">
+      <section class="order">
+        <div class="container">
+          <h1 class="order__title">আপনার অর্ডার করা বিষয়।</h1>
+          <h2 class="order__subtitle">
+            আপনার কার্টে <span class="counter">2</span> আইটেম।
+          </h2>
+          <div class="order__table">
+            <ul class="order-head">
+              <li class="order-head__item">পণ্য</li>
+              <li class="order-head__item">মূল্য</li>
+              <li class="order-head__item">পরিমাণ</li>
+              <li class="order-head__item">মোট</li>
+            </ul>
+            <ul class="order__items-list">
+              <li class="order__item">
+                <div class="product">
+                  <img src="./images/shop/1.jpg" class="product__img" />
+                  <p class="product__description">দিগন্তীয় সামগ্রী</p>
+                </div>
+                <p class="product__price">BDT 3439</p>
+                <div class="quantity">
+                  <button class="quantity__btn minus" type="button">-</button>
+                  <input class="quantity__input" type="text" />
+                  <button class="quantity__btn plus" type="button">+</button>
+                </div>
+                <p class="product__total-price">BDT 3439</p>
+                <button class="product__delete-button" type="button">
+                  <img src="./images/cross.png" alt="cross" />
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="order__btns">
+            <a href="./index.html" class="order__btn-go-home"
+              >কেনাকাটা চালিয়ে যান</a
+            >
+            <a href="#" class="order__btn-review">পর্যালোচনা</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <ul class="socials">
+            <li class="socials__items">
+              <a href="#" class="socials__link"
+                ><img
+                  src="./images/socials/youtube.png"
+                  alt="youtube"
+                  class="socials__img"
+              /></a>
+            </li>
+            <li class="socials__items">
+              <a href="#" class="socials__link"
+                ><img
+                  src="./images/socials/facebook.png"
+                  alt="facebook"
+                  class="socials__img"
+              /></a>
+            </li>
+            <li class="socials__items">
+              <a href="#" class="socials__link"
+                ><img
+                  src="./images/socials/twitter.png"
+                  alt="twitter"
+                  class="socials__img"
+              /></a>
+            </li>
+          </ul>
+          <div class="site-map">
+            <div class="site-map__section">
+              <h4 class="site-map__title">যোগাযোগ</h4>
+              <ul class="site-map__list">
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link"
+                    >বাড়ি ৪৫, রাস্তা ৮, ধানমন্ডি, ঢাকা ১২০৫, বাংল</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="site-map__section">
+              <h4 class="site-map__title">আমাদের সম্পর্কে</h4>
+              <ul class="site-map__list">
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link">আমাদের সম্পর্কে</a>
+                </li>
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link">দোকান</a>
+                </li>
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link">পর্যালোচনা</a>
+                </li>
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link">যোগাযোগ</a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-map__section">
+              <h4 class="site-map__title">আইনগত</h4>
+              <ul class="site-map__list">
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link">গোপনীয়তা নীতি</a>
+                </li>
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link">কুকি নীতি</a>
+                </li>
+                <li class="site-map__item">
+                  <a href="#" class="site-map__link">শর্তাবলী ও শর্তাদি</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__entitlements">
+            © 2024 কপিরাইট, সমস্ত অধিকার সংরক্ষিত
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
