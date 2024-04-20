@@ -113,6 +113,8 @@
   border-radius: 50%;
   border: none;
   background-color: #e7e9ed;
+
+  cursor: pointer;
 }
 .quantity__input {
   width: 50px;
@@ -131,8 +133,14 @@
   letter-spacing: -0.2px;
 }
 .product__delete-button {
+  width: 12px;
+  height: 12px;
+
   border: none;
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/cross.png);
 
   cursor: pointer;
 }
