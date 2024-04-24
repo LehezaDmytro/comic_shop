@@ -1,4 +1,3 @@
-console.log("Привіт, я файл index.js");
 //Імпорт товарів
 import goods from "./data/goods.js";
 //Відмальовування імпортованих товарів у секцію shop

@@ -41,7 +41,7 @@ a {
   margin: 0 auto;
   padding: 0 150px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding: 0 20px;
   }
 }
@@ -60,7 +60,7 @@ a {
 
   z-index: 3;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     height: 100px;
     padding: 23px 0;
   }
@@ -79,7 +79,7 @@ a {
 
   cursor: pointer;
 
-  @media (max-width: 375px) {
+  @media (max-width: 1000px) {
     display: block;
   }
 }
@@ -88,7 +88,7 @@ a {
   padding-top: 25px;
   padding-bottom: 8px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 }
@@ -112,7 +112,7 @@ a {
 
   margin-top: 19px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     margin-top: 10px;
   }
 }
@@ -150,7 +150,7 @@ a {
 .main {
   padding-top: 82px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding-top: 100px;
   }
 }
@@ -164,7 +164,7 @@ a {
   background-size: contain;
   background-image: url(../images/hero-img-desctop.jpg);
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     background-image: url(../images/hero-img-mobile.jpg);
     height: 711px;
   }
@@ -176,7 +176,7 @@ a {
 
   background-color: #f1f2f5;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding: 70px 0;
   }
 }
@@ -194,7 +194,7 @@ a {
   line-height: 1;
   letter-spacing: -1.2px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     margin-bottom: 49px;
   }
 }
@@ -204,7 +204,7 @@ a {
   gap: 50px;
   justify-content: center;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     gap: 35px;
   }
 }
@@ -227,7 +227,7 @@ a {
 .shop {
   padding: 80px 0;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding: 64px 0;
   }
 }
@@ -243,7 +243,7 @@ a {
   line-height: 1;
   letter-spacing: -1.2px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     margin-bottom: 54px;
   }
 }
@@ -313,7 +313,7 @@ a {
 
   background-color: #778bc6;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding-top: 80px;
     padding-bottom: 72px;
   }
@@ -331,7 +331,7 @@ a {
   line-height: 1.09;
   letter-spacing: -1.2px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     display: none;
   }
 }
@@ -341,7 +341,7 @@ a {
   justify-content: space-between;
   gap: 40px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     gap: 60px;
   }
 }
@@ -359,7 +359,7 @@ a {
   line-height: 1.41;
   letter-spacing: -1.2px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     margin-bottom: 30px;
   }
 }
@@ -382,7 +382,7 @@ a {
   padding: 79px 0;
   background-color: #f7f8fc;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding-top: 64px;
     padding-bottom: 72px;
   }
@@ -393,7 +393,7 @@ a {
   gap: 52px;
   align-items: center;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     gap: 90px;
   }
 }
@@ -422,7 +422,7 @@ a {
 
   height: 280px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     width: 335px;
   }
 }
@@ -451,7 +451,7 @@ a {
     0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.01),
     0px 1.852px 3.148px 0px rgba(0, 0, 0, 0);
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     max-width: 308px;
     padding: 42px 21px;
   }
@@ -461,7 +461,7 @@ a {
   font-weight: 500;
   line-height: 2;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     margin-bottom: 10px;
   }
 }
@@ -476,7 +476,7 @@ a {
   padding: 77px 0 76px 0;
   background-color: #343434;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding: 75px 0 83px 0;
   }
 }
@@ -485,7 +485,7 @@ a {
   flex-wrap: wrap;
   gap: 150px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     gap: 65px;
   }
 }
@@ -493,7 +493,7 @@ a {
   padding-top: 68px;
   max-width: 491px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding-top: 0;
   }
 }
@@ -522,7 +522,7 @@ a {
 
   border-bottom: 1px solid rgba(153, 153, 153, 0.56);
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding: 98px 0 31px 0;
   }
 }
@@ -532,7 +532,7 @@ a {
 
   padding: 0 109px 0 96px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding: 0;
     margin-bottom: 62px;
   }
@@ -543,7 +543,7 @@ a {
   flex-wrap: wrap;
   gap: 152px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     row-gap: 50px;
     column-gap: 42px;
   }
@@ -568,7 +568,7 @@ a {
 
   text-align: center;
 
-  @media (max-width: 375px) {
+  @media (max-width: 645px) {
     padding: 28px 0 23px 0;
   }
 }
