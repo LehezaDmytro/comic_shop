@@ -62,7 +62,7 @@
 .order__items-list {
   margin-bottom: 57px;
 
-  @media (max-width) {
+  @media (max-width: 645px) {
     display: flex;
     gap: 15px;
     overflow-y: scroll;
@@ -79,6 +79,8 @@
     gap: 45px;
 
     align-items: flex-start;
+
+    scroll-snap-align: center;
   }
 }
 .product {
