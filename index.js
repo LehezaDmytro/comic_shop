@@ -1,8 +1,9 @@
 //Імпорт товарів
 import goods from "./data/goods.js";
+
 //Відмальовування імпортованих товарів у секцію shop
 const shopList = document.querySelector(".shop__list");
-const markupGoods = goods.map((i) => {
+const renderGoods = goods.map((i) => {
   const article = Object.keys(i);
   return `<li class="shop__item">
               <img src="${i[article].image}" class="shop__img" />
@@ -14,8 +15,7 @@ const markupGoods = goods.map((i) => {
               <button class="shop__btn" data-id="${article}">ক্রয় করুন</button>
             </li>`;
 });
-
-shopList.innerHTML = markupGoods.join("");
+shopList.innerHTML = renderGoods.join("");
 
 //Створення кошика
 let cart = JSON.parse(localStorage.getItem("cart"))
@@ -29,30 +29,24 @@ const addToCart = (id) => {
   } else {
     cart[id]++;
   }
-
   localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 //Зміна значення лічильника кількості товарів у кошику
 const cartCounter = () => {
-  const couter = document.querySelectorAll(".counter");
-  const obj = JSON.parse(localStorage.getItem("cart"));
-  if (obj) {
-    const currentCounter = Object.values(obj);
-
+  const couter = document.querySelector(".counter");
+  //Перевіряємо чи є щось у кошику
+  if (cart) {
+    const currentCounter = Object.values(cart);
+    //Обчисюємо суму товарів у кошику
     let sum = 0;
-
     for (let number of currentCounter) {
       sum += number;
     }
-
-    for (let i = 0; i < couter.length; i++) {
-      couter[i].textContent = sum;
-    }
+    couter.textContent = sum;
   } else {
-    for (let i = 0; i < couter.length; i++) {
-      couter[i].textContent = 0;
-    }
+    //Якщо кошик пустий, присвоюємо 0
+    couter.textContent = 0;
   }
 };
 cartCounter();
@@ -63,7 +57,9 @@ shopSection.addEventListener("click", (e) => {
   if (e.target.nodeName !== "BUTTON") {
     return;
   } else {
+    //Додаємо товар в кошик
     addToCart(e.target.dataset.id);
+    //Оновлюємо лічильник товарів в кошику
     cartCounter();
   }
 });

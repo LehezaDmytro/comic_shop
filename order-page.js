@@ -1,17 +1,21 @@
 //Імпорт товарів
 import goods from "./data/goods.js";
 
-const ordersList = document.querySelector(".order__items-list");
-
+//Отримання кошика з локального сховища
 const cart = JSON.parse(localStorage.getItem("cart"));
-console.log(cart);
 
 //Відмальовування списку товарів в замовленні
-const markupOrder = () => {
+const ordersList = document.querySelector(".order__items-list");
+const renderOrder = () => {
+  //Очищення списку товарів замовлення
   ordersList.innerHTML = "";
+  //Створення змінної в яку буде записана розмітка списку товарів
   let markup = "";
+  //Перебираємо товари в кошику
   for (let article in cart) {
+    //Перебираємо доступні товари
     for (let good of goods) {
+      //Якщо товар з кошика співпадає з доступним товаром, відмальовуємо його розмітку і додаємо її в змінну markup
       if (good[article]) {
         markup += `<li class="order__item">
                 <div class="product">
@@ -38,26 +42,28 @@ const markupOrder = () => {
       }
     }
   }
+  //Рендеримо отриману розмітку на сторінку
   ordersList.innerHTML = markup;
 };
-markupOrder();
+renderOrder();
+
 //Зміна значення лічильника кількості товарів у кошику
 const cartCounter = () => {
   const couter = document.querySelectorAll(".counter");
-  const obj = JSON.parse(localStorage.getItem("cart"));
-  if (obj) {
-    const currentCounter = Object.values(obj);
-
+  //Перевіряємо чи є щось у кошику
+  if (cart) {
+    const currentCounter = Object.values(cart);
+    //Обчисюємо суму товарів у кошику
     let sum = 0;
-
     for (let number of currentCounter) {
       sum += number;
     }
-
+    //Відмальовуємо суму товарів у всі елементи на сторінуці які мають клас .counter
     for (let i = 0; i < couter.length; i++) {
       couter[i].textContent = sum;
     }
   } else {
+    //Якщо кошик пустий, всім елементам з класом .counetr присвоюємо 0
     for (let i = 0; i < couter.length; i++) {
       couter[i].textContent = 0;
     }
@@ -65,6 +71,7 @@ const cartCounter = () => {
 };
 cartCounter();
 
+//Відслідковування кліку по кнопках збільшення кількості товарів, зменшення кількості товарів, та видалення товару
 ordersList.addEventListener("click", (e) => {
   if (e.target.classList.contains("plus")) {
     plusFunction(e.target.dataset.id);
@@ -77,29 +84,30 @@ ordersList.addEventListener("click", (e) => {
     }
   }
   if (e.target.classList.contains("delete")) {
-    console.log(e.target);
     deleteFunction(e.target.dataset.id);
   }
 });
 
+//Збільшення кількості товарів
 const plusFunction = (id) => {
   cart[id]++;
   localStorage.setItem("cart", JSON.stringify(cart));
   cartCounter();
-  markupOrder();
+  renderOrder();
 };
 
+//Зменшення кількості товарів
 const minusFunction = (id) => {
   cart[id]--;
   localStorage.setItem("cart", JSON.stringify(cart));
   cartCounter();
-  markupOrder();
+  renderOrder();
 };
 
+//Видалення товару
 const deleteFunction = (id) => {
-  console.log("YO");
   delete cart[id];
   localStorage.setItem("cart", JSON.stringify(cart));
   cartCounter();
-  markupOrder();
+  renderOrder();
 };
