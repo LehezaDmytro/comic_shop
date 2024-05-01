@@ -17,27 +17,44 @@ const renderOrder = () => {
     for (let good of goods) {
       //Якщо товар з кошика співпадає з доступним товаром, відмальовуємо його розмітку і додаємо її в змінну markup
       if (good[article]) {
-        markup += `<li class="order__item">
-                <div class="product">
+        markup += `<tr class="order__item">
+                <td class="product">
                   <img src="${good[article].image}" class="product__img" />
                   <p class="product__description">${
                     good[article].productName
                   }</p>
-                </div>
-                <p class="product__price">BDT ${good[article].price}</p>
-                <div class="quantity">
-                  <button class="quantity__btn minus" type="button" data-id="${article}">-</button>
+                </td>
+                <td class="product__price">BDT ${good[article].price}</td>
+                <td class="quantity">
+                  <button
+                    class="quantity__btn minus"
+                    type="button"
+                    data-id="${article}"
+                  >
+                    -
+                  </button>
                   <input class="quantity__input" type="text" value="${
                     cart[article]
-                  }"/>
-                  <button class="quantity__btn plus" type="button" data-id="${article}">+</button>
-                </div>
-                <p class="product__total-price">BDT ${
+                  }" />
+                  <button
+                    class="quantity__btn plus"
+                    type="button"
+                    data-id="${article}"
+                  >
+                    +
+                  </button>
+                </td>
+                <td class="product__total-price">BDT ${
                   good[article].price * cart[article]
-                }</p>
-                <button class="product__delete-button delete" type="button" data-id="${article}">
-                </button>
-              </li>`;
+                }</td>
+                <td>
+                  <button
+                    class="product__delete-button delete"
+                    type="button"
+                    data-id="${article}"
+                  ></button>
+                </td>
+              </tr>`;
         break;
       }
     }
