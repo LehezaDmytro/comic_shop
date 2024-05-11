@@ -14,12 +14,6 @@
   font-size: 40px;
   font-weight: 700;
 }
-.order__table {
-  @media (max-width: 645px) {
-    display: flex;
-    gap: 15px;
-  }
-}
 .order__subtitle {
   margin-bottom: 31px;
 
@@ -34,60 +28,53 @@
     margin-bottom: 78px;
   }
 }
-.order-head {
-  display: flex;
-  gap: 150px;
+.order-table {
+  width: 100%;
+  margin-bottom: 36px;
 
+  @media (max-width: 850px) {
+    display: flex;
+    gap: 10px;
+  }
+}
+.table-head {
+  display: grid;
+  grid-template-columns: minmax(125px, 1fr) repeat(3, minmax(100px, 200px)) 12px;
+  justify-items: start;
   margin-bottom: 56px;
 
-  @media (max-width: 645px) {
-    flex-direction: column;
-    gap: 50px;
+  @media (max-width: 850px) {
+    grid-template-columns: none;
+    grid-template-rows: 130px repeat(3, 84px) 12px;
+    align-items: center;
   }
 }
-.order-head > :first-child {
-  margin-right: 290px;
-
-  @media (max-width: 645px) {
-    margin-right: 0;
-    margin-bottom: 100px;
-  }
-}
-.order-head__item {
+.table-head__item {
   color: #343434;
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
 }
-.order__items-list {
+.order-table__body {
   margin-bottom: 57px;
 
-  @media (max-width: 645px) {
+  @media (max-width: 850px) {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     overflow-y: scroll;
     scroll-snap-type: x mandatory;
   }
 }
 .order__item {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(125px, 1fr) repeat(3, minmax(100px, 200px)) 12px;
+  justify-items: start;
   align-items: center;
-  gap: 110px;
+  margin-bottom: 20px;
 
-  @media (max-width: 645px) {
-    flex-direction: column;
-    gap: 45px;
-
-    align-items: flex-start;
-
-    scroll-snap-align: center;
-  }
-}
-.product {
-  margin-right: 250px;
-
-  @media (max-width: 645px) {
-    margin-right: 0;
+  @media (max-width: 850px) {
+    grid-template-columns: none;
+    grid-template-rows: 130px repeat(3, 84px) 12px;
   }
 }
 .product__img {
@@ -125,6 +112,11 @@
 
   cursor: pointer;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .quantity__input {
   width: 50px;
   height: 33px;
@@ -140,6 +132,9 @@
   font-weight: 600;
   line-height: 1.77;
   letter-spacing: -0.2px;
+}
+.product__delete-item {
+  justify-self: center;
 }
 .product__delete-button {
   width: 12px;
@@ -168,7 +163,7 @@
   color: #343434;
   font-size: 17px;
   font-weight: 600;
-  line-height: 1.88; /* 188.235% */
+  line-height: 1.88;
   letter-spacing: -0.6px;
 
   border-radius: 8px;

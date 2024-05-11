@@ -5,7 +5,7 @@ import goods from "./data/goods.js";
 const cart = JSON.parse(localStorage.getItem("cart"));
 
 //Відмальовування списку товарів в замовленні
-const ordersList = document.querySelector(".order__items-list");
+const ordersList = document.querySelector(".order-table__body");
 const renderOrder = () => {
   //Очищення списку товарів замовлення
   ordersList.innerHTML = "";
@@ -33,9 +33,9 @@ const renderOrder = () => {
                   >
                     -
                   </button>
-                  <input class="quantity__input" type="text" value="${
+                  <input class="quantity__input" type="number" min="1" value="${
                     cart[article]
-                  }" />
+                  }" data-id="${article}" name="quantity" />
                   <button
                     class="quantity__btn plus"
                     type="button"
@@ -47,7 +47,7 @@ const renderOrder = () => {
                 <td class="product__total-price">BDT ${
                   good[article].price * cart[article]
                 }</td>
-                <td>
+                <td class="product__delete-item">
                   <button
                     class="product__delete-button delete"
                     type="button"
@@ -61,6 +61,7 @@ const renderOrder = () => {
   }
   //Рендеримо отриману розмітку на сторінку
   ordersList.innerHTML = markup;
+  inputChange();
 };
 renderOrder();
 
@@ -128,3 +129,18 @@ const deleteFunction = (id) => {
   cartCounter();
   renderOrder();
 };
+
+//Зміна кількості товарів в input
+function inputChange() {
+  const inputs = document.querySelectorAll(".quantity__input");
+  for (const input of inputs) {
+    input.addEventListener("change", (e) => {
+      const id = e.target.dataset.id;
+      cart[id] = +e.target.value;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      cartCounter();
+      renderOrder();
+    });
+  }
+}
+inputChange();
